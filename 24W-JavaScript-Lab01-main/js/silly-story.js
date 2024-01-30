@@ -5,7 +5,7 @@
 - randomize for the button
 - story for the paragraph that outputs the final story
 */
-var customName = document.getElementById("customName");
+var customName = document.getElementById("customname");
 var randomize = document.querySelector(".randomize");
 var story = document.querySelector(".story");
 /* STEP 3: Create the variable that contains the story string that will be modified 
@@ -19,11 +19,9 @@ Area 51, Death Valley, Aruba
 spontaneously combusted, rapidly sublimated, evaporated instantly
 */
 var insertX = ["Donald Trump", "Jackie Chan", "Santa Claus"];
-var insertY = ["Aruba", "Death Valley", "Area 51"];
+var insertY = ["Area 51", "Death Valley", "Aruba"];
 var insertZ = ["spontaneously combusted", "rapidly sublimated", "evaporated instantly"];
-
 // FUNCTIONS
-
 /* STEP 2: have a look at the following function - if you call this function and pass it an array, it will return one of the elements of that array randomly */
 function randomValueFromArray(array) {
     return array[Math.floor(Math.random() * array.length)];
@@ -50,32 +48,27 @@ function result() {
     newStory = newStory.replaceAll(":inserty:", yItem);
     newStory = newStory.replaceAll(":insertz:", zItem);
     /* STEP 10: If the user has typed a name in the customName field, replace the name 'Bob' in the story with whatever they typed */
-    
     if (customName.value != "") {
         newStory = newStory.replaceAll("Bob", customName.value);
     }
     /* STEP 11: If the metric radio button has been checked, we need to convert the temperature and mass numbers in the story */
     if (document.getElementById("metric").checked) {
-        // STEP 11a: Create a variable called weight and convert the 300lbs to kgs (1lb = 0.453592kg)      
+        // STEP 11a: Create a variable called weight and convert the 300lbs to kgs (1lb = 0.453592kg)
         var weight = 300 * 0.453592;
         // STEP 11b: Replace the string 300 pounds with the updated weight in kg
-        newStory = newStory.replace("300 pounds", weight + " kilograms");      
-        // STEP 12a: Create a variable called temp and convert °F to °C ... the formula for conversion is °C = (°F - 32) x 5/9        
+        newStory = newStory.replace("300 pounds", weight + " kilograms");
+        // STEP 12a: Create a variable called temp and convert °F to °C ... the formula for conversion is °C = (°F - 32) x 5/9
         var temp = (94 - 32) * 5/9;
         // STEP 12b: Replace the string '94 fahrenheit' with the updated temperature in °C
-        newStory = newStory.replace("94 farenheit", temp + " celsius");
+        newStory = newStory.replace("94 farenheit", temp + " celsius");  
     }
     /* STEP 13: Make the textContent property of the story variable (which references the paragraph) equal to newStory */
     story.textContent = newStory;
-    
     // The following line makes the paragraph visible
     story.style.visibility = "visible";
 }
-
 // EVENT LISTENERS
 /* STEP 5: Add a click event listener to the randomize variable 
 so that when the button it represents is clicked, the result() function is run. */
-
 randomize.addEventListener("click", result);
-
 // This lab based on the excellent assessment challenge at https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Silly_story_generator
