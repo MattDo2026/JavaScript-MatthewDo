@@ -1,0 +1,66 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+h1 {
+    color: #333;
+}
+
+section {
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button {
+    margin: 5px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #fff;
+}
+
+#noun1 { background-color: #3498db; }
+#verb { background-color: #2ecc71; }
+#adjective { background-color: #e74c3c; }
+#noun2 { background-color: #f39c12; }
+#setting { background-color: #9b59b6; }
+#playback { background-color: #34495e; }
+#random { background-color: #1abc9c; }
+
+button:hover {
+    background-color: #ddd;
+}
+
+p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+#story {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #008080;
+}
+
+#studentId {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #777;
+}
